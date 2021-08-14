@@ -22,42 +22,36 @@
             </div>
             <div class="col-md-4 col-sm-6 my-3">
                 <h2 class="duration-2 animate__animated animate__bounceInLeft">Boat Deck</h3>
-                <div class="row room" id="er">
+                <div class="row room child-room" id="er">
                     <div class="text-center align-self-center">
                         <h3>Emergency Room</h3>
                     </div>
                     <div class="smoke position-absolute px-3 py-2">
                         <span id="aeg"></span>
                     </div>
-                    <!-- <div class="temperature py-2 px-3">
-                        <h6 class="text-center">Suhu: <span id="t-er">32</span>&#8451;</h6>
-                    </div> -->
+                    <div class="position-absolute px-3 py-2 fire">
+                        <h5 class="badge bg-danger">Berapi</h5>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3">
                 <h2 class="duration-2 animate__animated animate__bounceInLeft">Capt Bridge Deck</h2>
                 <div class="row room">
-                    <div id="cdr" class="h-50 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center position-relative">
+                    <div id="cdr" class="h-50 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Captain Day Room</h3>
                             <div class="smoke position-absolute px-3 py-2">
                                 <span id="acdr"></span>
                             </div>
                         </div>
-                        <!-- <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-cdr">32</span>&#8451;</h6>
-                        </div> -->
                     </div>
-                    <div id="or" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
+                    <div id="or" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Office Room</h3>
                         </div>
                         <div class="smoke position-absolute px-3 py-2">
                             <span id="aor"></span>
                         </div>
-                        <!-- <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-or">32</span>&#8451;</h6>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -78,7 +72,7 @@
             <div class="col-md-4 col-sm-6 my-3">
                 <h2 class="duration-2 animate__animated animate__bounceInLeft">Poop Deck</h2>
                 <div class="row room">
-                    <div id="gall" class="h-50 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center position-relative">
+                    <div id="gall" class="h-50 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Galley</h3>
                         </div>
@@ -89,7 +83,7 @@
                             <span id="sg"></span>&#8451;
                         </div>
                     </div>
-                    <div id="ccr" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
+                    <div id="ccr" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Ship Officer & CCR</h3>
                             <div class="smoke position-absolute px-3 py-2">
@@ -105,23 +99,29 @@
             <div class="col-md-4 col-sm-6 my-3">
                 <h2 class="duration-2 animate__animated animate__bounceInLeft">Tween Deck</h2>
                 <div class="row room">
-                    <div id="genset" class="h-33 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center position-relative">
+                    <div id="genset" class="h-33 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Generator Set</h3>
                         </div>
                         <div class="smoke position-absolute px-3 py-2">
                             <span id="ags"></span>
                         </div>
+                        <div class="position-absolute px-3 py-2 fire">
+                            <h5 class="badge bg-danger">Berapi</h5>
+                        </div>
                     </div>
-                    <div id="me" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
+                    <div id="me" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>Main Engine</h3>
                         </div>
                         <div class="smoke position-absolute px-3 py-2">
                             <span id="ame"></span>
                         </div>
+                        <div class="position-absolute px-3 py-2 fire">
+                            <h5 class="badge bg-danger">Berapi</h5>
+                        </div>
                     </div>
-                    <div id="ecr" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
+                    <div id="ecr" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center child-room position-relative">
                         <div class="text-center m-auto">
                             <h3>ECR Room</h3>
                         </div>
@@ -151,17 +151,6 @@
         </div>
     </div>
     <script>
-        /* let scroll = window.addEventListener('scroll', function() {
-            var top = window.scrollY
-            var temperature1 = document.getElementById('temperature1')
-            var temperature2 = document.getElementById('temperature2')
-            var toggleTemperature = document.getElementById('toggleTemperature')
-            if(top > 100) {
-                toggleTemperature.classList.remove('hide')
-            } else {
-                toggleTemperature.classList.add('hide')
-            }
-        }) */
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyDHrYBqHqKkOHjKGwlFd_ta3_K4fwiegDM",
@@ -186,6 +175,7 @@
         function setData(el, value) {
             let element = document.getElementById(el),
             smokes = ['aeg', 'acdr', 'aor', 'aw', 'ag', 'aso', 'ags', 'ame', 'aecr', 'awl'],
+            rooms = ['er', 'cdr', 'or', 'work', 'gall', 'ccr', 'genset', 'me', 'ecr', 'whell'],
             temperatures = ['sw', 'sg', 'sso', 'secr', 'swl'],
             fires = ['er', 'genset', 'me'],
             color = {
@@ -194,16 +184,15 @@
             };
             if(smokes.includes(el)) {
                 element.innerHTML = 'Asap: '+value+'%'
+                let indexSmoke = smokes.findIndex(item => item == el),
+                mRoom = document.getElementById(rooms[indexSmoke])
+                value > 50 ? mRoom.style.backgroundColor = color.danger : mRoom.style.backgroundColor = color.save
             }
             if(temperatures.includes(el)) {
                 element.innerHTML = 'Suhu: '+value
             }
             if(fires.includes(el)) {
-                value == 1 ? element.style.backgroundColor = color.danger : element.style.backgroundColor = color.save 
-            } else {
-                if(!smokes.includes(el) && !temperatures.includes(el)) {
-                    element.style.backgroundColor = color.save
-                }
+               value == 1 ? element.classList.add('on-fire') : element.classList.remove('on-fire')
             }
         }
     </script>

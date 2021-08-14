@@ -54,3 +54,14 @@ body {
 	left: 0;
 	position: absolute !important;
 }
+
+.child-room.on-fire .fire {
+	display: inline-block !important;
+}
+
+.child-room .fire {
+	text-align: right;
+	right: 0;
+	top: 0;
+	display: none;
+} 
