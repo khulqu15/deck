@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container-fluid w-100 py-5 px-md-5 ps-5">
-        <div id="toggleTemperature" onclick="window.location.href = '#'" class="toggleTemperature position-fixed hide px-5 rounded py-2">Lihat Suhu</div>
+        <!-- <div id="toggleTemperature" onclick="window.location.href = '#'" class="toggleTemperature position-fixed hide px-5 rounded py-2">Lihat Suhu</div> -->
         <div class="row g-5 mb-5 justify-content-md-center">
             <div class="col-12 mb-4">
                 <h1 class="display-4 text-center">Monitoring Kebakaran Kapal</h1>
@@ -26,9 +26,12 @@
                     <div class="text-center align-self-center">
                         <h3>Emergency Room</h3>
                     </div>
-                    <div class="temperature py-2 px-3">
-                        <h6 class="text-center">Suhu: <span id="t-er">32</span>&#8451;</h6>
+                    <div class="smoke position-absolute px-3 py-2">
+                        <span id="aeg"></span>
                     </div>
+                    <!-- <div class="temperature py-2 px-3">
+                        <h6 class="text-center">Suhu: <span id="t-er">32</span>&#8451;</h6>
+                    </div> -->
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3">
@@ -37,18 +40,24 @@
                     <div id="cdr" class="h-50 w-100 d-flex border-bottom align-self-center justify-content-center align-items-center position-relative">
                         <div class="text-center m-auto">
                             <h3>Captain Day Room</h3>
+                            <div class="smoke position-absolute px-3 py-2">
+                                <span id="acdr"></span>
+                            </div>
                         </div>
-                        <div class="temperature py-2 px-3">
+                        <!-- <div class="temperature py-2 px-3">
                             <h6 class="text-center">Suhu: <span id="t-cdr">32</span>&#8451;</h6>
-                        </div>
+                        </div> -->
                     </div>
                     <div id="or" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
                         <div class="text-center m-auto">
                             <h3>Office Room</h3>
                         </div>
-                        <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-or">32</span>&#8451;</h6>
+                        <div class="smoke position-absolute px-3 py-2">
+                            <span id="aor"></span>
                         </div>
+                        <!-- <div class="temperature py-2 px-3">
+                            <h6 class="text-center">Suhu: <span id="t-or">32</span>&#8451;</h6>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -58,8 +67,11 @@
                     <div class="text-center align-self-center">
                         <h3>Workshop</h3>
                     </div>
+                    <div class="smoke position-absolute px-3 py-2">
+                        <span id="aw"></span>
+                    </div>
                     <div class="temperature py-2 px-3">
-                        <h6 class="text-center">Suhu: <span id="t-work">32</span>&#8451;</h6>
+                        <span id="sw"></span>&#8451;
                     </div>
                 </div>
             </div>
@@ -70,16 +82,22 @@
                         <div class="text-center m-auto">
                             <h3>Galley</h3>
                         </div>
+                        <div class="smoke position-absolute px-3 py-2">
+                            <span id="ag"></span>
+                        </div>
                         <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-gall">32</span>&#8451;</h6>
+                            <span id="sg"></span>&#8451;
                         </div>
                     </div>
                     <div id="ccr" class="h-50 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
                         <div class="text-center m-auto">
                             <h3>Ship Officer & CCR</h3>
+                            <div class="smoke position-absolute px-3 py-2">
+                                <span id="aso"></span>
+                            </div>
                         </div>
                         <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-ccr">32</span>&#8451;</h6>
+                            <span id="sso"></span>&#8451;
                         </div>
                     </div>
                 </div>
@@ -91,24 +109,27 @@
                         <div class="text-center m-auto">
                             <h3>Generator Set</h3>
                         </div>
-                        <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-ganset">32</span>&#8451;</h6>
+                        <div class="smoke position-absolute px-3 py-2">
+                            <span id="ags"></span>
                         </div>
                     </div>
                     <div id="me" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
                         <div class="text-center m-auto">
                             <h3>Main Engine</h3>
                         </div>
-                        <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-me">32</span>&#8451;</h6>
+                        <div class="smoke position-absolute px-3 py-2">
+                            <span id="ame"></span>
                         </div>
                     </div>
                     <div id="ecr" class="h-33 w-100 d-flex align-self-center justify-content-center align-items-center position-relative">
                         <div class="text-center m-auto">
                             <h3>ECR Room</h3>
                         </div>
+                        <div class="smoke position-absolute px-3 py-2">
+                            <span id="aecr"></span>
+                        </div>
                         <div class="temperature py-2 px-3">
-                            <h6 class="text-center">Suhu: <span id="t-ecr">32</span>&#8451;</h6>
+                            <span id="secr"></span>&#8451;
                         </div>
                     </div>
                 </div>
@@ -119,15 +140,18 @@
                     <div class="text-center align-self-center">
                         <h3>Whell House</h3>
                     </div>
+                    <div class="smoke position-absolute px-3 py-2">
+                        <span id="awl"></span>
+                    </div>
                     <div class="temperature py-2 px-3">
-                        <h6 class="text-center">Suhu: <span id="t-whell">32</span>&#8451;</h6>
+                        <span id="swl"></span>&#8451;
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        let scroll = window.addEventListener('scroll', function() {
+        /* let scroll = window.addEventListener('scroll', function() {
             var top = window.scrollY
             var temperature1 = document.getElementById('temperature1')
             var temperature2 = document.getElementById('temperature2')
@@ -137,7 +161,7 @@
             } else {
                 toggleTemperature.classList.add('hide')
             }
-        })
+        }) */
         // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyDHrYBqHqKkOHjKGwlFd_ta3_K4fwiegDM",
@@ -153,17 +177,34 @@
 
         firebase.database().ref('/').on('value', (snapshot) => {
             let total = snapshot.val();
-            console.log(snapshot)
+            console.log(total)
             Object.entries(total).forEach(el => {
-                changeColor(el[0].toLowerCase(), el[1]);
+                setData(el[0].toLowerCase(), el[1]);
             });
         });
 
-        function changeColor(el, color) {
-            let element = document.getElementById(el);
-            color == 1 ?
-                element.style = 'background: #EE6093' :
-                element.style = 'background: #1AB0B0';
+        function setData(el, value) {
+            let element = document.getElementById(el),
+            smokes = ['aeg', 'acdr', 'aor', 'aw', 'ag', 'aso', 'ags', 'ame', 'aecr', 'awl'],
+            temperatures = ['sw', 'sg', 'sso', 'secr', 'swl'],
+            fires = ['er', 'genset', 'me'],
+            color = {
+                save: '#71EFA3',
+                danger: '#FF6B6B' 
+            };
+            if(smokes.includes(el)) {
+                element.innerHTML = 'Asap: '+value+'%'
+            }
+            if(temperatures.includes(el)) {
+                element.innerHTML = 'Suhu: '+value
+            }
+            if(fires.includes(el)) {
+                value == 1 ? element.style.backgroundColor = color.danger : element.style.backgroundColor = color.save 
+            } else {
+                if(!smokes.includes(el) && !temperatures.includes(el)) {
+                    element.style.backgroundColor = color.save
+                }
+            }
         }
     </script>
 </body>
